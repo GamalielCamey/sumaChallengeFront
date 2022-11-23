@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const GET_CHARACTERS = "GET_CHARACTERS";
 export const GET_DETAIL = "GET_DETAIL";
+export const GET_CHARACTER_BY_NAME = "GET_CHARACTER_BY_NAME";
 
 export function getCharacters() {
   return async function (dispatch) {
@@ -10,6 +11,13 @@ export function getCharacters() {
       type: GET_CHARACTERS,
       payload: json.data,
     });
+  };
+}
+
+export function getCharacterByName(payload) {
+  return {
+    type: GET_CHARACTER_BY_NAME,
+    payload,
   };
 }
 

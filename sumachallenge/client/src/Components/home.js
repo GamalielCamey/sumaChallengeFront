@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getCharacters} from "../actions";
 import Cards from "./cards";
+import NavBar from "./navbar";
 import Pages from "./page";
 
 function Home() {
@@ -37,6 +38,7 @@ function Home() {
 
   return (
     <div className="App">
+      <NavBar />
       <Pages
         page={currentPage}
         prevHandler={prevHandler}
