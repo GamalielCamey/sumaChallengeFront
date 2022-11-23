@@ -7,7 +7,7 @@ export const CLEAR_DETAIL = "CLEAR_DETAIL";
 
 export function getCharacters() {
   return async function (dispatch) {
-    const json = await axios(`http://localhost:3000/`);
+    const json = await axios(`https://suma-api.vercel.app/`);
     return dispatch({
       type: GET_CHARACTERS,
       payload: json.data,
@@ -30,7 +30,7 @@ export function getCharacterByName(payload) {
 export function getDetail(url) {
   return async function (dispatch) {
     const link = {url};
-    const result = await axios.post("http://localhost:3000/detail", link);
+    const result = await axios.post("https://suma-api.vercel.app/detail", link);
     return dispatch({
       type: GET_DETAIL,
       payload: result.data,
