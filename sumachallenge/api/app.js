@@ -23,6 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
+app.use("/api", routes);
 
 //Middlewares
 app.use(morgan("dev"));
