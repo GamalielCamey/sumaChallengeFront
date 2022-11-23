@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
 
+//* Button that takes props to add functionality
+
 function Button({link, handleClick, description}) {
   return (
     <Link to={link}>

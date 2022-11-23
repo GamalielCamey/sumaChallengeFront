@@ -4,9 +4,10 @@ import {clearDetail} from "../actions";
 import Button from "./button";
 import Loader from "./loader";
 
-const Detail = ({toggleOpenModal}) => {
-  let character = useSelector((state) => state.character);
+//* Detail page with reusable components (Button & Loader) in the case of the button it send the specific handle function and route as props
 
+const Detail = () => {
+  let character = useSelector((state) => state.character);
   const dispatch = useDispatch();
 
   useEffect(() => {

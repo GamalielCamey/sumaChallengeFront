@@ -4,9 +4,7 @@ const router = Router();
 
 // router and SWAPI requests
 
-// const characterDetail = async () =>{
-//   const result =
-// }
+//* Function to get all characters data from the API to be saved on initial state
 
 const charactersApi = async () => {
   let urls = [];

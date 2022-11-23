@@ -3,6 +3,8 @@ import {getDetail} from "../actions";
 import {useDispatch} from "react-redux";
 import Button from "./button";
 
+//* Individual cards layout
+
 function Cards({name, url}) {
   const dispatch = useDispatch();
   const handleClick = () => {

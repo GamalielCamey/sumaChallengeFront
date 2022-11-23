@@ -6,6 +6,8 @@ import Loader from "./loader";
 import NavBar from "./navbar";
 import Pages from "./page";
 
+//* Homepage with pagination component wich takes handlers as props to render the current page && adds functionality to the prev and next buttons
+
 function Home() {
   const dispatch = useDispatch();
   const characters = useSelector((state) => state.characters);

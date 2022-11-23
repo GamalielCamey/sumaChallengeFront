@@ -3,6 +3,8 @@ import {useDispatch} from "react-redux";
 import {getCharacterByName} from "../actions";
 import svg from "../utils/star-wars.svg";
 
+//*Search bar with liveSearch implemented to match coincidences and render filtered results
+
 export default function NavBar() {
   const [name, setName] = useState("");
 
