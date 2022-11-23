@@ -1,6 +1,16 @@
-import {GET_CHARACTERS, GET_DETAIL, GET_CHARACTER_BY_NAME} from "../actions";
+import {
+  GET_CHARACTERS,
+  GET_DETAIL,
+  GET_CHARACTER_BY_NAME,
+  CLEAR_DETAIL,
+} from "../actions";
 
-let initialState = {character: [], characters: [], allCharacters: []};
+let initialState = {
+  character: [],
+  characters: [],
+  allCharacters: [],
+  planet: [],
+};
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case GET_CHARACTERS:
@@ -8,6 +18,12 @@ function rootReducer(state = initialState, action) {
         ...state,
         characters: action.payload,
         allCharacters: action.payload,
+      };
+
+    case CLEAR_DETAIL:
+      return {
+        ...state,
+        character: [],
       };
     case GET_DETAIL:
       return {

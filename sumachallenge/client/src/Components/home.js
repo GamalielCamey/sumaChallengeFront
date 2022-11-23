@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getCharacters} from "../actions";
 import Cards from "./cards";
+import Loader from "./loader";
 import NavBar from "./navbar";
 import Pages from "./page";
 
@@ -37,20 +38,25 @@ function Home() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div className="bg-neutral-900">
       <NavBar />
       <Pages
         page={currentPage}
         prevHandler={prevHandler}
         nextHandler={nextHandler}
       />
-      {charactersPage?.map((el, i) => {
-        return (
-          <div className="cards_container">
-            <Cards className="card" name={el.name} url={el.url} />
-          </div>
-        );
-      })}
+      <div className="flex justify-center mt-7">
+        {!characters.length && <Loader />}
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5 h-screen">
+        {charactersPage?.map((el, i) => {
+          return (
+            <div className="flex flex-nowrap justify-center ">
+              <Cards name={el.name} url={el.url} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

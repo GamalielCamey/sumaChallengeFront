@@ -37,9 +37,16 @@ router.get("/", async (req, res) => {
   return res.status(200).send(char);
 });
 
+router.post("/planet", async (req, res) => {
+  const {homeworld} = req.body;
+  console.log(homeworld);
+  const result = await axios.get(homeworld);
+  console.log(result);
+  return res.status(200).send(result.data.name);
+});
+
 router.post("/detail", async (req, res) => {
   const {url} = req.body;
-  console.log(url);
   const result = await axios.get(url);
   return res.status(200).send(result.data);
 });
