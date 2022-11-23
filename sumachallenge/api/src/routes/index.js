@@ -1,10 +1,12 @@
 const {Router} = require("express");
 const axios = require("axios");
-const {json} = require("body-parser");
-const e = require("express");
 const router = Router();
 
 // router and SWAPI requests
+
+// const characterDetail = async () =>{
+//   const result =
+// }
 
 const charactersApi = async () => {
   let urls = [];
@@ -32,7 +34,14 @@ const charactersApi = async () => {
 router.get("/", async (req, res) => {
   let characters = await charactersApi();
   let char = characters.flat();
-  res.status(200).send(char);
+  return res.status(200).send(char);
+});
+
+router.post("/detail", async (req, res) => {
+  const {url} = req.body;
+  console.log(url);
+  const result = await axios.get(url);
+  return res.status(200).send(result.data);
 });
 
 module.exports = router;
