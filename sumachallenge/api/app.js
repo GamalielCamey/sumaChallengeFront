@@ -8,7 +8,6 @@ const cors = require("cors");
 
 //Settings
 
-app.set("port", 3000);
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true, limit: "50mb"}));
 app.use(bodyParser.json({limit: "50mb"}));
